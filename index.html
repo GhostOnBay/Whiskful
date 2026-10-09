@@ -3,66 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whiskful - Recipe Collection</title>
+    <title>Whiskful | Delicious Recipes & Food Stories</title>
+    <meta name="description" content="Whiskful is a modern recipe website with comforting dishes, food stories, cooking inspiration, and seasonal favorites.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <h1 class="logo">🥘 Whiskful</h1>
-            <nav class="nav">
+        <div class="container nav-wrap">
+            <a href="#home" class="brand">🥘 Whiskful</a>
+            <nav class="nav" aria-label="Main navigation">
                 <a href="#home">Home</a>
                 <a href="#recipes">Recipes</a>
-                <a href="#about">About</a>
+                <a href="#journal">Journal</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
             </nav>
             <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
         </div>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="eyebrow">Fresh ideas every day</p>
-            <h2>Cook something unforgettable</h2>
-            <p>Browse easy dinners, sweet treats, and colorful meals that fit your mood.</p>
-            <button class="cta-btn" onclick="document.getElementById('recipes').scrollIntoView({behavior: 'smooth'})">Explore Recipes</button>
-        </div>
-    </section>
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <span class="eyebrow">Fresh ideas for everyday cooking</span>
+                    <h1>Make mealtime feel a little more magical.</h1>
+                    <p>From cozy breakfasts to weeknight dinners, discover recipes that are simple, joyful, and made to share.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#recipes">Explore recipes</a>
+                        <a class="button button-secondary" href="#journal">Read the journal</a>
+                    </div>
+                    <ul class="hero-stats">
+                        <li><strong>120+</strong><span>recipes</span></li>
+                        <li><strong>4.9/5</strong><span>community love</span></li>
+                        <li><strong>Weekly</strong><span>new ideas</span></li>
+                    </ul>
+                </div>
 
-    <section class="search-section">
-        <div class="container">
-            <input type="text" id="searchInput" class="search-bar" placeholder="Search recipes...">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
-                <button class="filter-btn" data-filter="lunch">Lunch</button>
-                <button class="filter-btn" data-filter="dinner">Dinner</button>
-                <button class="filter-btn" data-filter="dessert">Dessert</button>
+                <div class="hero-visual" aria-label="Featured dishes">
+                    <div class="feature-card large">
+                        <span class="chip">Featured recipe</span>
+                        <div class="feature-image feature-one"></div>
+                        <div class="feature-content">
+                            <h3>Herby Lemon Pasta</h3>
+                            <p>Bright, creamy, and ready in under 20 minutes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-stack">
+                        <div class="feature-card small">
+                            <div class="feature-image feature-two"></div>
+                            <div class="feature-content">
+                                <h4>Quick breakfast</h4>
+                            </div>
+                        </div>
+                        <div class="feature-card small">
+                            <div class="feature-image feature-three"></div>
+                            <div class="feature-content">
+                                <h4>Cozy dinners</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="recipes" id="recipes">
-        <div class="container">
-            <div class="section-heading">
-                <h2>Featured Recipes</h2>
-                <p>Handpicked meals for busy weekdays and cozy weekends.</p>
+        <section class="highlights">
+            <div class="container highlight-grid">
+                <div class="highlight-item">
+                    <span>🍽️</span>
+                    <h3>Easy meals</h3>
+                    <p>Recipes designed for real life and busy kitchens.</p>
+                </div>
+                <div class="highlight-item">
+                    <span>🌿</span>
+                    <h3>Fresh ingredients</h3>
+                    <p>Simple flavors that still feel special and seasonal.</p>
+                </div>
+                <div class="highlight-item">
+                    <span>✨</span>
+                    <h3>Kitchen joy</h3>
+                    <p>Thoughtful inspiration for cozy nights and shared tables.</p>
+                </div>
             </div>
-            <div class="recipe-grid" id="recipeGrid"></div>
-        </div>
-    </section>
+        </section>
 
-    <section class="about" id="about">
-        <div class="container">
-            <h2>About Whiskful</h2>
-            <p>Whiskful brings together everyday recipes, kitchen inspiration, and comforting food moments in one cheerful place.</p>
-        </div>
-    </section>
+        <section class="recipes" id="recipes">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow dark">Featured recipes</span>
+                    <h2>Cook something delicious today</h2>
+                </div>
 
-    <footer class="footer" id="contact">
-        <div class="container">
-            <p>&copy; 2024 Whiskful. All rights reserved.</p>
-            <p>Made with ❤️ by food lovers</p>
+                <div class="toolbar">
+                    <div class="filter-buttons" aria-label="Recipe filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                        <button class="filter-btn" data-filter="lunch">Lunch</button>
+                        <button class="filter-btn" data-filter="dinner">Dinner</button>
+                        <button class="filter-btn" data-filter="dessert">Dessert</button>
+                    </div>
+                    <input type="text" id="searchInput" class="search-bar" placeholder="Search recipes..." aria-label="Search recipes">
+                </div>
+
+                <div id="recipeGrid" class="recipe-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="journal" id="journal">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow dark">The journal</span>
+                    <h2>Food stories and seasonal inspiration</h2>
+                </div>
+                <div id="blogGrid" class="blog-grid"></div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow dark">Kitchen snapshots</span>
+                    <h2>Beautiful meals worth repeating</h2>
+                </div>
+                <div id="galleryGrid" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-wrap">
+                <div class="contact-copy">
+                    <span class="eyebrow dark">Stay in touch</span>
+                    <h2>Let’s share a little recipe magic.</h2>
+                    <p>Get weekly meal ideas, seasonal picks, and a few notes from the kitchen.</p>
+                </div>
+
+                <form id="contactForm" class="contact-form">
+                    <div class="input-row">
+                        <input type="text" name="name" placeholder="Your name" aria-label="Your name" required>
+                    </div>
+                    <div class="input-row">
+                        <input type="email" name="email" placeholder="Your email" aria-label="Your email" required>
+                    </div>
+                    <div class="input-row">
+                        <textarea name="message" rows="4" placeholder="Tell us what you’re craving..." aria-label="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="button button-primary">Send message</button>
+                    <p id="formMessage" class="form-message" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-wrap">
+            <p>&copy; 2024 Whiskful</p>
+            <p>Made with love for good food and good company.</p>
         </div>
     </footer>
 
